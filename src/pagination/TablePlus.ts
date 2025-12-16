@@ -1,4 +1,4 @@
-import Table from "@tiptap/extension-table";
+import {Table} from "@tiptap/extension-table";
 import { mergeAttributes } from "@tiptap/core";
 import { DOMOutputSpec } from "@tiptap/pm/model";
 import { TableRowGroup } from "./TableRowGroup";
@@ -12,7 +12,8 @@ import { Node } from "@tiptap/pm/model";
 
 export const TablePlus = Table.extend<TablePlusOptions>({
   content: "(tableRowGroup|tableRow)+",
-  addOptions() {
+  // @ts-ignore
+  addOptions () {
     return {
       ...this.parent?.(),
       resizeHandleStyle: {
